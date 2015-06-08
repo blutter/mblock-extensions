@@ -1,0 +1,39 @@
+{	"extensionName": "UltrasonicSensor",
+	"sort":1,
+	"extensionPort": 0,
+	"firmware":"0.0.0",
+	"javascriptURL":"js/UltasonicSensor.js",
+	"blockSpecs": [
+		[ 
+			"R", "ultrasonic sensor %n trigger pin %n echo pin %n distance in cm", 
+			"getUltrasonicSensorCm", "1", "1", "2",
+			{
+				"encode":"{d0}{d1}{d2}",
+				"setup":"",
+				"inc":"#include \"NewPing.h\"\n",
+				"def":"NewPing ultrasonicSensor{0}({1}, {2}, 400);\n",
+				"work":"ultrasonicSensor{0}.ping_cm()",
+				"loop":""
+			}
+		],
+
+		[ 
+			"R", "ultrasonic sensor %n trigger pin %n echo pin %n distance in inches", 
+			"getUltrasonicSensorIn", "1", "1", "2",
+			{
+				"encode":"{d0}{d1}{d2}",
+				"setup":"",
+				"inc":"#include \"NewPing.h\"\n",
+				"def":"NewPing ultrasonicSensor{0}({1}, {2}, 400);\n",
+				"work":"ultrasonicSensor{0}.ping_in()",
+				"loop":""
+			}
+		]
+	],
+	"menus": {
+	},
+	"values":{
+	},
+	"translators":{
+	}
+}

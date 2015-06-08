@@ -1,0 +1,60 @@
+{	"extensionName": "AF Motor",
+	"sort":1,
+	"extensionPort": 0,
+	"firmware":"0.0.0",
+	"javascriptURL":"js/AFMotor.js",
+	"blockSpecs": [
+		["w", "setup %m.motor motor using motor port M%m.motorPort", "setupMotor", "Left", "1",
+			{
+				"encode":"{d0}{d1}",
+				"setup":"",
+				"inc":"#include \"AFMotor.h\"\n",
+				"def":"AF_DCMotor motor{0}({1});\n",
+				"work":"",
+				"loop":""
+			}
+		],
+
+		["w", "set %m.motor motor direction %m.direction", "setMotorDirection", "Left", "FORWARD",
+			{
+				"encode":"{d0}{s1}",
+				"setup":"",
+				"inc":"",
+				"def":"",
+				"work":"motor{0}.run({1});\n",
+				"loop":""
+			}
+		],
+
+		["w", "run %m.motor motor at speed %d.motorspeed", "runMotor", "Left", "50",
+			{
+				"encode":"{d0}{s1}",
+				"setup":"",
+				"inc":"",
+				"def":"",
+				"work":"motor{0}.setSpeed({1})\n",
+				"loop":""
+			}
+		]
+	],
+	"menus": {
+		"motor" : ["Left", "Right", "Front", "Back", "Top", "Bottom"],
+		"motorPort" : ["1", "2", "3", "4"],
+		"direction" : ["FORWARD", "BACKWARD", "BRAKE", "RELEASE"],
+		"motorspeed" : ["0", "50", "100", "150", "200", "250"]
+	},
+	"values":{
+		"Left":1,
+		"Right":2,
+		"Front":3,
+		"Back":4,
+		"Top":5,
+		"Bottom":6,
+		"FORWARD":1,
+		"BACKWARD":2,
+		"BRAKE":3,
+		"RELEASE":4
+	},
+	"translators":{
+	}
+}
