@@ -32,7 +32,7 @@
 				"setup":"",
 				"inc":"",
 				"def":"",
-				"work":"motor{0}.setSpeed({1})\n",
+				"work":"motor{0}.setSpeed({1});\n",
 				"loop":""
 			}
 		]

@@ -57,6 +57,7 @@
 	ext.getUltrasonicSensorCm = function(){
 		
 	};
+	ext.getUltrasonicSensorCmMedian5 = function(){};
 	ext.getUltrasonicSensorIn = function(){
 		
 	};

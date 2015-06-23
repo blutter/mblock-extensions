@@ -18,6 +18,19 @@
 		],
 
 		[ 
+			"R", "ultrasonic sensor %n trigger pin %n echo pin %n distance in cm (median 5 pings)", 
+			"getUltrasonicSensorCmMedian5", "1", "1", "2",
+			{
+				"encode":"{d0}{d1}{d2}",
+				"setup":"",
+				"inc":"#include \"NewPing.h\"\n",
+				"def":"NewPing ultrasonicSensor{0}({1}, {2}, 400);\n",
+				"work":"ultrasonicSensor{0}.convert_cm(ultrasonicSensor{0}.ping_median())",
+				"loop":""
+			}
+		],
+
+		[ 
 			"R", "ultrasonic sensor %n trigger pin %n echo pin %n distance in inches", 
 			"getUltrasonicSensorIn", "1", "1", "2",
 			{
